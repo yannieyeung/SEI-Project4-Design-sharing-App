@@ -53,8 +53,16 @@ function EachPost(props) {
       .post(url, { review, post_id })
       .then((response) => {
         // debugger;
-        const included = [...post.included, response.data.data];
-        setPost({ ...post, included });
+        // const included = [...post.included, response.data.data];
+        setPost((prevVal) => {
+          const postArr = post;
+          postArr.push(response.data.data);
+          return {
+            ...prevVal,
+            postArr,
+          };
+          // { ...post, included }
+        });
         setReview({
           title: "",
           description: "",

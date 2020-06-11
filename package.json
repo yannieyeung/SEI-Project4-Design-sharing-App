@@ -2,6 +2,7 @@
   "name": "Project_4_design_sharing_app",
   "private": true,
   "dependencies": {
+    "@axetroy/react-download": "^1.1.1",
     "@babel/preset-react": "^7.10.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",

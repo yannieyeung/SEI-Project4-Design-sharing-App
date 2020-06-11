@@ -16,17 +16,6 @@ function ReviewForm(props) {
           //     setRating(value);
           //   }}
         >
-          <FaStar
-            className="review-star"
-            size={25}
-            color={value <= hover || rating ? "ffc107" : "#e4e5e9"}
-            onMouseEnter={() => {
-              setHover(value);
-            }}
-            onMouseLeave={() => {
-              setHover(null);
-            }}
-          />
           <input
             className="start-radio"
             type="radio"
@@ -39,6 +28,17 @@ function ReviewForm(props) {
             id={`rating-${score}`}
             onClick={() => {
               setRating(value);
+            }}
+          />
+          <FaStar
+            className="review-star"
+            size={25}
+            color={value <= (hover || rating) ? "#8a7ef8" : "#e4e5e9"}
+            onMouseEnter={() => {
+              setHover(value);
+            }}
+            onMouseLeave={() => {
+              setHover(null);
             }}
           />
         </label>
