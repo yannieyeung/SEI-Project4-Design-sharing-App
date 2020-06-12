@@ -10,12 +10,7 @@ function ReviewForm(props) {
     const value = index + 1;
     return (
       <Fragment>
-        <label
-          onClick={props.clickStar.bind(this, score)}
-          //   onClick={() => {
-          //     setRating(value);
-          //   }}
-        >
+        <label>
           <input
             className="start-radio"
             type="radio"

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function Anim(props) {
   const container = useRef(null);
-  const animationDataVar = props.code;
+  // const animationDataVar = props.attributes.code;
   const url = props.attributes.url;
 
   useEffect(() => {
