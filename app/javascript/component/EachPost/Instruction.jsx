@@ -82,6 +82,13 @@ function Instruction() {
         </div>
       </div>
       <div className="para">
+        <h4>Demo</h4>
+        <p>
+          See a basic implementation{" "}
+          <a href="https://codepen.io/airnan/project/editor/ZeNONO/">here.</a>
+        </p>
+      </div>
+      <div className="para">
         <p className="italic">
           For more info please visit{" "}
           <a href="https://airbnb.io/lottie/#/web?id=from-extension"> here</a>

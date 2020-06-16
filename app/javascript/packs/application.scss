@@ -515,7 +515,7 @@ $highlight4: #e6b8d8;
 }
 
 .review-form-form {
-  margin-top: 35%;
+  margin-top: 26%;
 }
 
 .form-wrapper {
@@ -568,10 +568,38 @@ $highlight4: #e6b8d8;
 .rating-container > h4 {
   color: #3e4877;
 }
+
+.review-form-form > button {
+  margin-left: 12px;
+  width: 30%;
+  height: 35px;
+  margin-top: 13px;
+  border: 1px;
+  border-image: linear-gradient(45deg, #3e4877 0%, #e6b8d8 100%);
+  border-image-slice: 9;
+  border-style: solid;
+  background: none;
+  color: #3e4877;
+  outline: none;
+}
+
+.review-form-form > button:hover,
+.review-form-form > button:focus {
+  cursor: pointer;
+  box-shadow: 0 0.5em 0.5em -0.4em #3e4877;
+  transform: translateY(-0.5em);
+  animation: pulse 1s;
+  box-shadow: 0 0 0 0.5em rgba(#fff, 0);
+  background: linear-gradient(180deg, #aba4d2 10%, #e6b8d8 100%);
+  border: none;
+  color: white;
+  outline: none;
+}
 //========================= CSS for Instruction.jsx ========================
 .para {
   margin: 0 auto;
   width: 70%;
+  color: #3e4877;
 }
 .text-wrapper {
   width: 90%;
