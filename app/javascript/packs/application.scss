@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,600;0,800;1,200;1,300;1,400;1,600;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap");
 
 html {
   scroll-snap-type: y mandatory;
@@ -47,6 +48,11 @@ body {
 .sub-main-header {
 }
 
+$leftborder1: #b0b9d9;
+$leftborder2: #777da3;
+$leftborder3: #aba4d2;
+$leftborder4: #e6b8d8;
+
 .all-posts-wrapper {
   width: 62%;
   margin-left: 42%;
@@ -54,6 +60,20 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   margin-top: -400px;
+
+  &:nth-child(4n + 1) > .post-grid > .post-wrapper > .title-rating-wrapper {
+    //border-color: hsla(random(365), random(365), 50, 1);
+    border-left: 5px solid $leftborder1;
+  }
+  &:nth-child(4n + 2) > .post-grid > .post-wrapper > .title-rating-wrapper {
+    border-left: 5px solid $leftborder2;
+  }
+  &:nth-child(4n + 3) > .post-grid > .post-wrapper > .title-rating-wrapper {
+    border-left: 5px solid $leftborder3;
+  }
+  &:nth-child(4n + 4) > .post-grid > .post-wrapper > .title-rating-wrapper {
+    border-left: 5px solid $leftborder4;
+  }
 }
 
 .share-btn {
@@ -97,6 +117,17 @@ body {
 section {
   //   scroll-snap-align: start;
 }
+
+.post-wrapper {
+  width: 90%;
+}
+
+// .post-grid:hover {
+//   border-radius: 0px;
+//   background: #ffffff;
+//   box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #ffffff;
+// }
+
 // ============================ CSS for animation.jsx===============================================
 
 .animation-wrapper {
@@ -115,6 +146,18 @@ section {
 
 .animation-wrapper > a > .container {
   width: 60%;
+}
+
+.animation-wrapper > a > .container:hover {
+  transform: scale(1.6);
+}
+
+.post-animation-title {
+  padding: 10px;
+}
+
+.post-animation-score {
+  padding: 10px;
 }
 
 // ============================ CSS for EachPost.jsx===============================================
@@ -524,4 +567,42 @@ $highlight4: #e6b8d8;
 
 .rating-container > h4 {
   color: #3e4877;
+}
+//========================= CSS for Instruction.jsx ========================
+.para {
+  margin: 0 auto;
+  width: 70%;
+}
+.text-wrapper {
+  width: 90%;
+  padding: 20px;
+  padding-left: 50px;
+  position: relative;
+}
+.code-snippet {
+  width: 70%;
+  margin: 0 auto;
+  background: #f6f7fd;
+  font-family: "Hind Siliguri", sans-serif;
+}
+.bash-wrapper {
+  width: 90%;
+  padding: 20px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.bash {
+  width: 70%;
+  margin: 0 auto;
+  background: #f6f7fd;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.bash-p {
+  position: absolute;
+  top: -10px;
+  right: -18px;
+  color: lightgrey;
+  font-size: 15px;
 }
