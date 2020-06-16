@@ -9,6 +9,7 @@ function EachPostDetails(props) {
   const container = useRef(null);
   const url = props.attributes.url;
   const total = props.reviewNum.length;
+  const animationDataVar = JSON.parse(props.attributes.code);
 
   useEffect(() => {
     lottie.loadAnimation({
@@ -16,8 +17,8 @@ function EachPostDetails(props) {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      // animationData: animationDataVar,
-      path: url,
+      animationData: animationDataVar,
+      //   path: url,
       rendererSettings: {
         preserveAspectRatio: "xMinYMin slice",
       },
@@ -39,16 +40,25 @@ function EachPostDetails(props) {
   return (
     <div className="each-post-details-container">
       <div className="post-animation-container">
-        <div className="postAnimation" ref={container}></div>
-        <h3>{props.attributes.title}</h3>
-        <Link to={`/posts/${props.attributes.slug}/instruction`}>
-          <button className="get-code-btn">Instruction</button>
+        <Link to={`/`}>
+          <div className="postAnimation" ref={container}></div>
         </Link>
-        <DownloadBtn code={props.attributes.code} />
       </div>
-      <div className="total-reviews">{total} User Reviews</div>
+      <div className="post-info">
+        <h3>{props.attributes.title}</h3>
+      </div>
+
       <div className="ratings">{scoreArr}</div>
-      <div className="avergae-score">{props.attributes.avg_score} out of 5</div>
+      <div className="total-reviews">{total} User Reviews</div>
+      <div className="average-score">{props.attributes.avg_score} out of 5</div>
+      <div className="post-button-div">
+        <span>
+          <Link to={`/posts/${props.attributes.slug}/instruction`}>
+            <button className="get-code-btn">Instruction</button>
+          </Link>
+          <DownloadBtn code={props.attributes.code} />
+        </span>
+      </div>
     </div>
   );
 }

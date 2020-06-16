@@ -8,6 +8,7 @@ function ReviewForm(props) {
 
   const scoreArr = [1, 2, 3, 4, 5].map((score, index) => {
     const value = index + 1;
+
     return (
       <Fragment>
         <label>
@@ -21,9 +22,16 @@ function ReviewForm(props) {
               console.log("======chose=====", score);
             }}
             id={`rating-${score}`}
-            onClick={() => {
-              setRating(value);
-            }}
+            onClick={
+              () => {
+                props.clickStar(score);
+                setRating(value);
+              }
+
+              //   props.clickStar.bind(this, score)
+              //   setRating(value);
+            }
+            // onClick={props.clickStar.bind(this, score)}
           />
           <FaStar
             className="review-star"
@@ -42,31 +50,37 @@ function ReviewForm(props) {
   });
   return (
     <div className="form-wrapper">
-      <form onSubmit={props.formSubmit} className="review-form">
-        <h4>Share your thoughts</h4>
-        <input
-          onChange={props.formInputChange}
-          value={props.review.title}
-          type="text"
-          name="title"
-          placeholder="Title"
-        />
-        <br />
-        <input
-          onChange={props.formInputChange}
-          value={props.review.description}
-          type="text"
-          name="description"
-          placeholder="description"
-        />
-        <input value="1" type="hidden" name="user_id" />
-        <div className="rating-container">
-          <h4>Share your rating</h4>
-          <div className=""></div>
-          {scoreArr}
+      <div className="form-wrapper2">
+        <div className="form-wrapper3">
+          <div className="form-wrapper4">
+            <form onSubmit={props.formSubmit} className="review-form-form">
+              <h4>Share your thoughts</h4>
+              <input
+                onChange={props.formInputChange}
+                value={props.review.title}
+                type="text"
+                name="title"
+                placeholder="Title"
+              />
+              <br />
+              <input
+                onChange={props.formInputChange}
+                value={props.review.description}
+                type="text"
+                name="description"
+                placeholder="description"
+              />
+              <input value="1" type="hidden" name="user_id" />
+              <div className="rating-container">
+                <h4>Share your rating</h4>
+                <div className=""></div>
+                {scoreArr}
+              </div>
+              <button type="submit">Share</button>
+            </form>
+          </div>
         </div>
-        <button type="submit">Share</button>
-      </form>
+      </div>
     </div>
   );
 }

@@ -39,7 +39,7 @@ function EachPost(props) {
   }
 
   function onSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     const csrfToken = document.querySelector("[name=csrf-token]").textContent;
     axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
@@ -53,16 +53,17 @@ function EachPost(props) {
       .post(url, { review, post_id })
       .then((response) => {
         // debugger;
-        // const included = [...post.included, response.data.data];
-        setPost((prevVal) => {
-          const postArr = post;
-          postArr.push(response.data.data);
-          return {
-            ...prevVal,
-            postArr,
-          };
-          // { ...post, included }
-        });
+        const included = [...post.included, response.data.data];
+        setPost({ ...post, included });
+        // setPost((prevVal) => {
+        //   const postArr = post;
+        //   postArr.push(response.data.data);
+        //   return {
+        //     ...prevVal,
+        //     post: postArr,
+        //   };
+
+        // });
         setReview({
           title: "",
           description: "",
@@ -75,10 +76,10 @@ function EachPost(props) {
   }
 
   function clickOnStar(score) {
-    // debugger;
+    debugger;
     console.log(score);
     setReview({ ...review, score: score });
-    console.log(review);
+    console.log("bannnanananana", review);
   }
 
   return (
